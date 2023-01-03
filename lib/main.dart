@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
                           tx.title,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 16,
                           ),
                         ),
                         Text(
