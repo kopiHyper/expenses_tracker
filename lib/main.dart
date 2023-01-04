@@ -36,13 +36,36 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter App'),
-        ),
-        body: Column(
+      // appBar: AppBar(
+      //   title: Text('Flutter App'),
+      // ),
+      body: SafeArea(
+        child: Column(
           children: [
             Card(
               child: Text('CHART!'),
+            ),
+            Card(
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                    ),
+                    TextButton(
+                      child: Text('Add transaction'),
+                      style:
+                          TextButton.styleFrom(foregroundColor: Colors.purple),
+                      onPressed: () => {},
+                    ),
+                  ],
+                ),
+              ),
             ),
             Column(
               children: transactions.map((tx) {
@@ -62,7 +85,7 @@ class MyHomePage extends StatelessWidget {
                         '\$${tx.amount}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                           color: Colors.purple,
                         ),
                       ),
@@ -91,6 +114,8 @@ class MyHomePage extends StatelessWidget {
               }).toList(),
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
