@@ -1,6 +1,7 @@
 import 'package:expenses_tracker/transaction.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
+import 'package:intl/intl.dart';
 
 void main() => runApp(MyWidget());
 
@@ -58,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        tx.amount.toString(),
+                        '\$${tx.amount}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
