@@ -1,4 +1,6 @@
-import './widgets/user_transaction.dart';
+import './widgets/new_transaction.dart';
+import '../widgets/transaction_list.dart';
+import '../models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'dart:core';
 
@@ -16,9 +18,48 @@ class MyWidget extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final List<Transaction> _userTransactions = [
+    Transaction(
+      id: 't1',
+      title: 'New Shoes',
+      amount: 69.99,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'New Shirt',
+      amount: 19.99,
+      date: DateTime.now(),
+    )
+  ];
+
+  void _addNewTransaction(String txTitle, double txAmount) {
+    final newTx = Transaction(
+      title: txTitle,
+      amount: txAmount,
+      date: DateTime.now(),
+      id: DateTime.now.toString(),
+    );
+
+    setState(() {
+      _userTransactions.add(newTx);
+    });
+  }
+
+  void _showAddNewSheet(BuildContext ctx) {
+    showModalBottomSheet(
+      context: ctx,
+      builder: (_) {
+        return NewTransaction(_addNewTransaction);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +74,20 @@ class MyHomePage extends StatelessWidget {
               Card(
                 child: Text('CHART!'),
               ),
-              UserTransaction(),
+              TransactionList(_userTransactions),
             ],
           ),
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(55, 0, 0, 0),
+        child: Icon(
+          Icons.add_circle,
+          size: 50,
+          color: Color.fromARGB(255, 74, 79, 238),
+        ),
+        onPressed: () => _showAddNewSheet(context),
       ),
     );
   }
