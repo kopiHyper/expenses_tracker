@@ -39,14 +39,18 @@ class _NewTransactionState extends State<NewTransaction> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             TextField(
-              decoration: InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(
+                labelText: 'Title',
+              ),
               controller: titleController,
               onSubmitted: (_) => {
                 submitData,
               },
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Amount'),
+              decoration: InputDecoration(
+                labelText: 'Amount',
+              ),
               controller: amountController,
               keyboardType: TextInputType.numberWithOptions(
                 decimal: true,
@@ -64,7 +68,8 @@ class _NewTransactionState extends State<NewTransaction> {
                       child: Text(
                         'Cancel',
                         style: TextStyle(
-                          fontSize: 14,
+                          fontFamily: 'Quicksand',
+                          fontSize: 16,
                           color: Colors.purple,
                         ),
                       ),
@@ -72,7 +77,10 @@ class _NewTransactionState extends State<NewTransaction> {
                   ElevatedButton(
                     child: Text(
                       'Add transaction',
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Quicksand',
+                      ),
                     ),
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,

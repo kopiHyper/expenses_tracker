@@ -28,6 +28,7 @@ class TransactionList extends StatelessWidget {
                   child: Text(
                     '${transactions[index].amount.toStringAsFixed(2)} PLN',
                     style: TextStyle(
+                      fontFamily: 'OpenSans',
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                       color: Colors.purple,
@@ -40,7 +41,7 @@ class TransactionList extends StatelessWidget {
                     Text(
                       transactions[index].title,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontFamily: 'OpenSans',
                         fontSize: 16,
                       ),
                     ),
@@ -48,6 +49,7 @@ class TransactionList extends StatelessWidget {
                       DateFormat('EEE, MMMM dd, y')
                           .format(transactions[index].date),
                       style: TextStyle(
+                        fontFamily: 'Quicksand',
                         fontSize: 12,
                         color: Colors.grey.shade700,
                       ),
