@@ -11,7 +11,7 @@ class NewTransaction extends StatefulWidget {
 
 class _NewTransactionState extends State<NewTransaction> {
   final titleController = TextEditingController();
-  late void closeModal = Navigator.of(context).pop();
+  late final closeModal = Navigator.of(context).pop();
   final amountController = TextEditingController();
 
   void submitData() {
