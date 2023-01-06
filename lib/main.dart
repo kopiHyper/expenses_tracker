@@ -81,11 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(55, 0, 0, 0),
+        backgroundColor: Color.fromARGB(122, 255, 255, 255),
         child: Icon(
           Icons.add_circle,
           size: 50,
-          color: Color.fromARGB(255, 74, 79, 238),
+          color: Colors.purple,
         ),
         onPressed: () => _showAddNewSheet(context),
       ),

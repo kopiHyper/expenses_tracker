@@ -46,11 +46,35 @@ class NewTransaction extends StatelessWidget {
                 submitData,
               },
             ),
-            TextButton(
-              child: Text('Add transaction'),
-              style: TextButton.styleFrom(foregroundColor: Colors.purple),
-              onPressed: submitData,
-            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.purple,
+                      ),
+                    ),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                  ElevatedButton(
+                    child: Text(
+                      'Add transaction',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.purple,
+                    ),
+                    onPressed: submitData,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
