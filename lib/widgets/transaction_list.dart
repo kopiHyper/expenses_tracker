@@ -16,7 +16,7 @@ class TransactionList extends StatelessWidget {
           ? Column(
               children: [
                 Text(
-                  'Żadnych dokonanych transakcji...',
+                  'No transactions yet...',
                   style: TextStyle(
                       fontFamily: 'Quicksand',
                       fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class TransactionList extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        '${transactions[index].amount.toStringAsFixed(2)} PLN',
+                        '\$${transactions[index].amount.toStringAsFixed(2)}',
                         style: TextStyle(
                           fontFamily: 'OpenSans',
                           fontWeight: FontWeight.bold,

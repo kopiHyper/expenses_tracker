@@ -60,7 +60,7 @@ class _NewTransactionState extends State<NewTransaction> {
             TextField(
               cursorColor: Colors.purple,
               decoration: InputDecoration(
-                labelText: 'Tytuł',
+                labelText: 'Title',
                 labelStyle: TextStyle(
                   color: Colors.purple,
                 ),
@@ -76,7 +76,7 @@ class _NewTransactionState extends State<NewTransaction> {
             TextField(
               cursorColor: Colors.purple,
               decoration: InputDecoration(
-                labelText: 'Kwota',
+                labelText: 'Amount',
                 labelStyle: TextStyle(
                   color: Colors.purple,
                 ),
