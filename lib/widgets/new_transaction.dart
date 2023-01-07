@@ -45,6 +45,9 @@ class _NewTransactionState extends State<NewTransaction> {
                 labelStyle: TextStyle(
                   color: Colors.purple,
                 ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.purple),
+                ),
               ),
               controller: titleController,
               onSubmitted: (_) => {
@@ -57,6 +60,9 @@ class _NewTransactionState extends State<NewTransaction> {
                 labelText: 'Kwota',
                 labelStyle: TextStyle(
                   color: Colors.purple,
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.purple),
                 ),
               ),
               controller: amountController,
