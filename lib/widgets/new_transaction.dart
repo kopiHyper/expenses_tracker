@@ -39,8 +39,12 @@ class _NewTransactionState extends State<NewTransaction> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             TextField(
+              cursorColor: Colors.purple,
               decoration: InputDecoration(
-                labelText: 'Title',
+                labelText: 'Tytuł',
+                labelStyle: TextStyle(
+                  color: Colors.purple,
+                ),
               ),
               controller: titleController,
               onSubmitted: (_) => {
@@ -48,8 +52,12 @@ class _NewTransactionState extends State<NewTransaction> {
               },
             ),
             TextField(
+              cursorColor: Colors.purple,
               decoration: InputDecoration(
-                labelText: 'Amount',
+                labelText: 'Kwota',
+                labelStyle: TextStyle(
+                  color: Colors.purple,
+                ),
               ),
               controller: amountController,
               keyboardType: TextInputType.numberWithOptions(

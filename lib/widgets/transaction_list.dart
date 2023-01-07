@@ -37,49 +37,41 @@ class TransactionList extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Card(
                   elevation: 4,
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 15,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.purple, width: 2),
-                        ),
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          '${transactions[index].amount.toStringAsFixed(2)} PLN',
-                          style: TextStyle(
-                            fontFamily: 'OpenSans',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple,
-                          ),
+                  margin: EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 5,
+                  ),
+                  child: ListTile(
+                    leading: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.purple, width: 2),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        '${transactions[index].amount.toStringAsFixed(2)} PLN',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.purple,
                         ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            transactions[index].title,
-                            style: TextStyle(
-                              fontFamily: 'OpenSans',
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            DateFormat('EEE, MMMM dd, y')
-                                .format(transactions[index].date),
-                            style: TextStyle(
-                              fontFamily: 'Quicksand',
-                              fontSize: 12,
-                              color: Colors.grey.shade700,
-                            ),
-                          )
-                        ],
-                      )
-                    ],
+                    ),
+                    title: Text(
+                      transactions[index].title,
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    subtitle: Text(
+                      DateFormat.yMMMd().format(transactions[index].date),
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontSize: 14,
+                      ),
+                    ),
                   ),
                 );
               },
