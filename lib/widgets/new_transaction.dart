@@ -51,6 +51,8 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
+    final curScaleFactor = MediaQuery.of(context).textScaleFactor;
+
     return Card(
       child: Container(
         padding: EdgeInsets.all(10),
@@ -103,7 +105,7 @@ class _NewTransactionState extends State<NewTransaction> {
                           : 'Picked date: ${DateFormat.yMd().format(_selectedDate!)}',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 15,
+                        fontSize: 15 * curScaleFactor,
                       ),
                     ),
                   ),
@@ -113,7 +115,7 @@ class _NewTransactionState extends State<NewTransaction> {
                       style: TextStyle(
                         fontFamily: 'Quicksand',
                         fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                        fontSize: 15 * curScaleFactor,
                         color: Colors.purple,
                       ),
                     ),
@@ -132,7 +134,7 @@ class _NewTransactionState extends State<NewTransaction> {
                         'Cancel',
                         style: TextStyle(
                           fontFamily: 'Quicksand',
-                          fontSize: 18,
+                          fontSize: 18 * curScaleFactor,
                           color: Colors.purple,
                         ),
                       ),
@@ -141,7 +143,7 @@ class _NewTransactionState extends State<NewTransaction> {
                     child: Text(
                       'Add transaction',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 18 * curScaleFactor,
                         fontFamily: 'Quicksand',
                       ),
                     ),

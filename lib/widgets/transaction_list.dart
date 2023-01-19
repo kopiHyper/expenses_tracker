@@ -10,8 +10,10 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final curScaleFactor = MediaQuery.of(context).textScaleFactor;
+
     return Container(
-      height: 700,
+      height: MediaQuery.of(context).size.height * 0.6,
       child: transactions.isEmpty
           ? Column(
               children: [
@@ -63,14 +65,14 @@ class TransactionList extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Quicksand',
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 18 * curScaleFactor,
                       ),
                     ),
                     subtitle: Text(
                       DateFormat.yMMMd().format(transactions[index].date),
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 14,
+                        fontSize: 14 * curScaleFactor,
                       ),
                     ),
                     trailing: IconButton(
