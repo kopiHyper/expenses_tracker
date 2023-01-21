@@ -53,7 +53,3 @@ flutter run
 ### Author
 
 - **Oktawian** - [kopiHyper](https://github.com/kopiHyper)
-
-### Acknowledgments
-
-- Based on udemy course
