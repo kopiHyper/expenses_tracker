@@ -7,8 +7,6 @@ This is an expense tracking app developed in Flutter. It allows users to add, ed
 - Add, edit, and delete expenses
 - View spending history and statistics
 - View expenses on a chart for better visualization
-- Support for multiple currencies
-- Secure and encrypted storage of data
 
 ### Getting Started
 
