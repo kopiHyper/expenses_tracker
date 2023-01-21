@@ -28,7 +28,7 @@ git clone https://github.com/kopiHyper/expenses_tracker.git
 2. Navigate to the project directory
 
 ```sh
-cd expense-tracker-flutter
+cd expense-tracker
 ```
 
 3. Install the dependencies
