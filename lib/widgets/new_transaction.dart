@@ -53,110 +53,118 @@ class _NewTransactionState extends State<NewTransaction> {
   Widget build(BuildContext context) {
     final curScaleFactor = MediaQuery.of(context).textScaleFactor;
 
-    return Card(
-      child: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            TextField(
-              cursorColor: Colors.purple,
-              decoration: InputDecoration(
-                labelText: 'Title',
-                labelStyle: TextStyle(
-                  color: Colors.purple,
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.purple),
-                ),
-              ),
-              controller: _titleController,
-              onSubmitted: (_) => {
-                _submitData,
-              },
-            ),
-            TextField(
-              cursorColor: Colors.purple,
-              decoration: InputDecoration(
-                labelText: 'Amount',
-                labelStyle: TextStyle(
-                  color: Colors.purple,
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.purple),
-                ),
-              ),
-              controller: _amountController,
-              keyboardType: TextInputType.numberWithOptions(
-                decimal: true,
-              ),
-              onSubmitted: (_) => {
-                _submitData,
-              },
-            ),
-            Container(
-              height: 70,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      _selectedDate == null
-                          ? 'No date chosen!'
-                          : 'Picked date: ${DateFormat.yMd().format(_selectedDate!)}',
-                      style: TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 15 * curScaleFactor,
-                      ),
-                    ),
+    return SingleChildScrollView(
+      child: Card(
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              TextField(
+                cursorColor: Colors.purple,
+                decoration: InputDecoration(
+                  labelText: 'Title',
+                  labelStyle: TextStyle(
+                    color: Colors.purple,
                   ),
-                  TextButton(
-                    child: Text(
-                      'Choose Date',
-                      style: TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15 * curScaleFactor,
-                        color: Colors.purple,
-                      ),
-                    ),
-                    onPressed: _presentDatePicker,
-                  )
-                ],
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.purple),
+                  ),
+                ),
+                controller: _titleController,
+                onSubmitted: (_) => {
+                  _submitData,
+                },
               ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
+              TextField(
+                cursorColor: Colors.purple,
+                decoration: InputDecoration(
+                  labelText: 'Amount',
+                  labelStyle: TextStyle(
+                    color: Colors.purple,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.purple),
+                  ),
+                ),
+                controller: _amountController,
+                keyboardType: TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
+                onSubmitted: (_) => {
+                  _submitData,
+                },
+              ),
+              Container(
+                height: 70,
+                child: Row(
+                  children: [
+                    Expanded(
                       child: Text(
-                        'Cancel',
+                        _selectedDate == null
+                            ? 'No date chosen!'
+                            : 'Picked date: ${DateFormat.yMd().format(_selectedDate!)}',
                         style: TextStyle(
                           fontFamily: 'Quicksand',
-                          fontSize: 18 * curScaleFactor,
+                          fontSize: 15 * curScaleFactor,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      child: Text(
+                        'Choose Date',
+                        style: TextStyle(
+                          fontFamily: 'Quicksand',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15 * curScaleFactor,
                           color: Colors.purple,
                         ),
                       ),
-                      onPressed: () => closeModal),
-                  ElevatedButton(
-                    child: Text(
-                      'Add transaction',
-                      style: TextStyle(
-                        fontSize: 18 * curScaleFactor,
-                        fontFamily: 'Quicksand',
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: Colors.purple,
-                    ),
-                    onPressed: _submitData,
-                  ),
-                ],
+                      onPressed: _presentDatePicker,
+                    )
+                  ],
+                ),
               ),
-            )
-          ],
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 18 * curScaleFactor,
+                            color: Colors.purple,
+                          ),
+                        ),
+                        onPressed: () => closeModal),
+                    ElevatedButton(
+                      child: Text(
+                        'Add transaction',
+                        style: TextStyle(
+                          fontSize: 18 * curScaleFactor,
+                          fontFamily: 'Quicksand',
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.purple,
+                      ),
+                      onPressed: _submitData,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

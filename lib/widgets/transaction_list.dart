@@ -15,27 +15,29 @@ class TransactionList extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.6,
       child: transactions.isEmpty
-          ? Column(
-              children: [
-                Text(
-                  'No transactions yet...',
-                  style: TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.purple),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 200,
-                  child: Image.asset(
-                    'assets/images/waiting.png',
-                    fit: BoxFit.cover,
+          ? LayoutBuilder(builder: (ctx, constrains) {
+              return Column(
+                children: [
+                  Text(
+                    'No transactions yet...',
+                    style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple),
                   ),
-                ),
-              ],
-            )
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: constrains.maxHeight * 0.6,
+                    child: Image.asset(
+                      'assets/images/waiting.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              );
+            })
           : ListView.builder(
               itemBuilder: (context, index) {
                 return Card(
