@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 import './widgets/new_transaction.dart';
@@ -15,7 +14,7 @@ void main() {
   //   DeviceOrientation.portraitUp,
   //   DeviceOrientation.portraitDown,
   // ]);
-  runApp(MyWidget());
+  runApp(const MyWidget());
 }
 
 class MyWidget extends StatelessWidget {
@@ -46,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _userTransactions.where((tx) {
       return tx.date.isAfter(
         DateTime.now().subtract(
-          Duration(days: 7),
+          const Duration(days: 7),
         ),
       );
     }).toList();
@@ -100,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Show chart',
                   style: TextStyle(
                       fontSize: 16,
@@ -139,12 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Platform.isIOS
         ? CupertinoPageScaffold(
             navigationBar: CupertinoNavigationBar(
-              middle: Text('Expense Tracker'),
+              middle: const Text('Expense Tracker'),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   GestureDetector(
-                    child: Icon(CupertinoIcons.add),
+                    child: const Icon(CupertinoIcons.add),
                     onTap: () => _showAddNewSheet(context),
                   )
                 ],
@@ -157,8 +156,8 @@ class _MyHomePageState extends State<MyHomePage> {
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerFloat,
             floatingActionButton: FloatingActionButton(
-              backgroundColor: Color.fromARGB(122, 255, 255, 255),
-              child: Icon(
+              backgroundColor: const Color.fromARGB(122, 255, 255, 255),
+              child: const Icon(
                 Icons.add_circle,
                 size: 50,
                 color: Colors.purple,

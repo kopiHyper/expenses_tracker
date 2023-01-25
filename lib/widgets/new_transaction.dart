@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -9,7 +6,7 @@ import 'adaptive_flat_button.dart';
 class NewTransaction extends StatefulWidget {
   final Function addTx;
 
-  NewTransaction(this.addTx);
+  const NewTransaction(this.addTx, {super.key});
 
   @override
   State<NewTransaction> createState() => _NewTransactionState();
@@ -73,7 +70,7 @@ class _NewTransactionState extends State<NewTransaction> {
             children: [
               TextField(
                 cursorColor: Colors.purple,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Title',
                   labelStyle: TextStyle(
                     color: Colors.purple,
@@ -89,7 +86,7 @@ class _NewTransactionState extends State<NewTransaction> {
               ),
               TextField(
                 cursorColor: Colors.purple,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Amount',
                   labelStyle: TextStyle(
                     color: Colors.purple,
@@ -99,7 +96,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   ),
                 ),
                 controller: _amountController,
-                keyboardType: TextInputType.numberWithOptions(
+                keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
                 onSubmitted: (_) => {
@@ -126,7 +123,7 @@ class _NewTransactionState extends State<NewTransaction> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 8),
+                margin: const EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -141,6 +138,11 @@ class _NewTransactionState extends State<NewTransaction> {
                         ),
                         onPressed: () => closeModal),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.purple,
+                      ),
+                      onPressed: _submitData,
                       child: Text(
                         'Add transaction',
                         style: TextStyle(
@@ -148,11 +150,6 @@ class _NewTransactionState extends State<NewTransaction> {
                           fontFamily: 'Quicksand',
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: Colors.purple,
-                      ),
-                      onPressed: _submitData,
                     ),
                   ],
                 ),
