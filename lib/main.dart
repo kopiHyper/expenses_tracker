@@ -177,20 +177,22 @@ class _MyHomePageState extends State<MyHomePage> {
       child: TransactionList(_userTransactions, _deleteTransaction),
     );
     final appBody = SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          if (isLandscape)
-            ..._buildLandscapeContent(
-              mediaQuery,
-              txListWidget,
-            ),
-          if (!isLandscape)
-            ..._buildPortraitContent(
-              mediaQuery,
-              txListWidget,
-            ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            if (isLandscape)
+              ..._buildLandscapeContent(
+                mediaQuery,
+                txListWidget,
+              ),
+            if (!isLandscape)
+              ..._buildPortraitContent(
+                mediaQuery,
+                txListWidget,
+              ),
+          ],
+        ),
       ),
     );
 
