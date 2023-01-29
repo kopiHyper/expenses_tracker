@@ -51,3 +51,8 @@ flutter run
 ### Author
 
 - **Oktawian** - [kopiHyper](https://github.com/kopiHyper)
+
+
+### App preview
+
+![Img_1](imgForReadme/img_1.png)
