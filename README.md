@@ -55,4 +55,5 @@ flutter run
 
 ### App preview
 
-![Img_1](imgForReadme/img_1.png)
+<img src="imgForReadme/img_1.png" width="150" height="150">
+
