@@ -54,6 +54,18 @@ flutter run
 
 
 ### App preview
+- Portrait mode
 
-<img src="imgForReadme/img_1.png" width="150" height="150">
+<div style="display: flex;">
+  <img src="imgForReadme/img_1.png" width="200" height="400">
+  <img src="imgForReadme/img_2.png" width="200" height="400">
+  <img src="imgForReadme/img_3.png" width="200" height="400">
+</div>
+
+- Landscape mode
+
+<div style="display: flex;">
+  <img src="imgForReadme/img_4.png" width="400" height="200">
+  <img src="imgForReadme/img_5.png" width="400" height="200">
+</div>
 
