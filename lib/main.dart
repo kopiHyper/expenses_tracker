@@ -173,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final txListWidget = Container(
-      height: mediaQuery.size.height * 0.5,
+      height: mediaQuery.size.height * 0.7,
       child: TransactionList(_userTransactions, _deleteTransaction),
     );
     final appBody = SafeArea(
